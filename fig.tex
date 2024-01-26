@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{xcolor}
+\graphicspath{{./subfigs}}
+\usepackage[export]{adjustbox}
+
+\pagenumbering{gobble}
+\newlength{\mywidth}
+\newlength{\myheight}
+
+\usepackage[framemethod=tikz]{mdframed}
+\mdfdefinestyle{mdstyle}{align=center,innertopmargin=2pt,
+    innerleftmargin=1pt,innerrightmargin=0pt,innerbottommargin=2pt,backgroundcolor=gray!50,linecolor=gray!50, roundcorner=3pt}
+\definecolor{gray}{RGB}{220,220,220}
+\newcommand{\st}{\sffamily}
+\begin{document}
+\nopagecolor
+\setlength{\tabcolsep}{-1pt}
+
+\begin{mdframed}[style=mdstyle]
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c@{\hskip 0pt} c}
+    \rotatebox[origin=c]{90}{\st Sagittal}&\begin{tabular}{c}
+      \input{fig1.tex}
+    \end{tabular}\\
+    \\[-2.25em]
+    \rotatebox[origin=c]{90}{\st Axial}&\begin{tabular}{c}
+        \input{fig2.tex}
+    \end{tabular}\\
+    \\[-2.25em]
+    \rotatebox[origin=c]{90}{\st Coronal}&\begin{tabular}{c}
+      \input{fig3.tex}
+  \end{tabular}
+  \end{tabular}}
+\end{mdframed}
+\end{document}
